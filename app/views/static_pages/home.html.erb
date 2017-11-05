@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Simple Web Page</title>
+	</head>
+	<body>
+		<h1>Sample App</h1>
+		<script>
+			var today = new Date();
+			var hourNow = today.getHours();
+			var greeting;
+
+			if (hourNow > 18) {
+			greeting = 'Good evening!';
+			} else if (hourNow > 12) {
+			greeting = 'Good afternoon!';
+			} else if (hourNow > 0) {
+			greeting = 'Good morning!';
+			} else {
+			greeting = 'Welcome!';
+			}
+			document.write('<h3>' + greeting + '</h3>');
+		</script>
+		<p>This is the home page for the<a href="http://www.gucas.ac.cn/" style="text-decoration:none">点击进入国科大</a>sample application.</p>
+		<a href="/static_pages/next"><input id="clearBtn" type="button" value="button" title="clear screen" style="text-decoration:none"/></a>
+		<p>This is the home page for the<a href="/static_pages/next" style="text-decoration:none">点击跳转</a>sample application.</p>
+  </body>
+</html>
+
