@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+作业1:在 ruby rails 框架中实现简单主页，能够链接其他主页，显示本地时间和页面跳转
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+网页点击[*这里*](https://morning-journey-60206.herokuapp.com/static_pages/home)
