@@ -3,28 +3,70 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Simple Web Page</title>
-	</head>
-	<body>
-		<h1>Sample App</h1>
+		<style>
+		#footer {
+				position: absolute; /*相对于父元素contanier定位*/
+				width: 100%;
+				bottom: 0;/*始终距离它的父元素的底部为0px.则是处于父元素的最底*/
+				}
+		</style>
 		<script>
-			var today = new Date();
-			var hourNow = today.getHours();
-			var greeting;
-
-			if (hourNow > 18) {
-			greeting = 'Good evening!';
-			} else if (hourNow > 12) {
-			greeting = 'Good afternoon!';
-			} else if (hourNow > 0) {
-			greeting = 'Good morning!';
-			} else {
-			greeting = 'Welcome!';
+			window.onload=function(){
+			//定时器每秒调用一次fnDate()
+			setInterval(function(){
+			fnDate();
+			},1000);
 			}
-			document.write('<h3>' + greeting + '</h3>');
+			//js 获取当前时间
+			function fnDate(){
+			var oDiv=document.getElementById("div1");
+			var date=new Date();
+			var year=date.getFullYear();//当前年份
+			var month=date.getMonth();//当前月份
+			var data=date.getDate();//天
+			var hours=date.getHours();//小时
+			var minute=date.getMinutes();//分
+			var second=date.getSeconds();//秒
+			var time=year+"-"+fnW((month+1))+"-"+fnW(data)+" \n"+fnW(hours)+":"+fnW(minute)+":"+fnW(second);
+			oDiv.innerHTML=time;
+			}
+			//补位 当某个字段不是两位数时补0
+			function fnW(str){
+			var num;
+			str>=10?num=str:num="0"+str;
+			return num;
+			}
 		</script>
-		<p>This is the home page for the<a href="http://www.gucas.ac.cn/" style="text-decoration:none">点击进入国科大</a>sample application.</p>
-		<a href="/static_pages/next"><input id="clearBtn" type="button" value="button" title="clear screen" style="text-decoration:none"/></a>
-		<p>This is the home page for the<a href="/static_pages/next" style="text-decoration:none">点击跳转</a>sample application.</p>
+	</head>
+	<body background="http://www.daoyouz.com/picture/abed28443746d19e427bae2564cc19a4.jpg">
+		<div style="color:#fff">
+			<h1 style="text-align:center">Simple Web Page / home</h1>
+		</div>
+		
+		<div style="height:400px; color:#fff">
+			<p>点击链接进入<a href="http://www.gucas.ac.cn/" style="text-decoration:none"><font color="red">国科大主页</a></p>
+			<p style="color:#fff">点击按钮跳转    <a href="/static_pages/next"><font color="red">next</a></p>
+		</div>
+		
+		<footer id=footer style="color:#fff">
+			<script>			
+				var today = new Date();
+				var hourNow = today.getHours();
+				var greeting;
+				if (hourNow > 18) {
+				greeting = '晚上好!';
+				} else if (hourNow > 12) {
+				greeting = '下午好!';
+				} else if (hourNow > 0) {
+				greeting = '早上好!';
+				} else {
+				greeting = '欢迎!';
+				}
+				document.write( '<h3 style="text-align:center">'+greeting+'</h3>');
+			</script>
+			<p id="div1" style="text-align:center"> </p>
+		</footer>
+		
   </body>
 </html>
 
